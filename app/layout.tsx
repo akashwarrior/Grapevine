@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Provider } from "@/components/provider";
+import { Providers } from "@/components/providers";
+import { Header } from "@/components/header";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -33,9 +34,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <Provider>
+        <Providers>
+          <Header />
           {children}
-        </Provider>
+        </Providers>
       </body>
     </html>
   );
