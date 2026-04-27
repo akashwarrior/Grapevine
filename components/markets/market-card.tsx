@@ -173,7 +173,10 @@ export function MarketCard({ market, featured = false }: MarketCardProps) {
 
             <div className="space-y-2 flex-1">
               {outcomesFromChain.map(({ name, probability, pool }) => (
-                <div className="flex items-center justify-between py-2 px-3 rounded-xl bg-secondary/50 border border-transparent shadow-inner-card hover:shadow-inner-card-hover transition-all group">
+                <div
+                  key={name}
+                  className="flex items-center justify-between py-2 px-3 rounded-xl bg-secondary/50 border border-transparent shadow-inner-card hover:shadow-inner-card-hover transition-all group"
+                >
                   <span className="text-[13px] font-medium text-muted-foreground group-hover:text-foreground transition-colors">{name}</span>
                   <div className="flex items-center gap-3">
                     <span className="font-mono tabular-nums text-lg font-semibold text-foreground tracking-tight">{probability}%</span>
